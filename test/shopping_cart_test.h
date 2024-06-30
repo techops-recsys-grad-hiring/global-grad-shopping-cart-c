@@ -1,6 +1,8 @@
 #ifndef JOI_GRAD_SHOPPING_CART_C_SHOPPING_CART_TEST_H
 #define JOI_GRAD_SHOPPING_CART_C_SHOPPING_CART_TEST_H
 
+void should_test_double(void);
+
 void shopping_cart_test_should_calculate_price_with_no_discount(void);
 
 void shopping_cart_test_should_calculate_loyalty_points_with_no_discount(void);
@@ -13,4 +15,4 @@ void shopping_cart_test_should_calculate_price_for_15_percent_discount(void);
 
 void shopping_cart_test_should_calculate_loyalty_points_for_15_percent_discount(void);
 
-#endif //JOI_GRAD_SHOPPING_CART_C_SHOPPING_CART_TEST_H
+#endif // JOI_GRAD_SHOPPING_CART_C_SHOPPING_CART_TEST_H
