@@ -1,0 +1,10 @@
+##
+# By default, ignore everything.
+#
+*
+
+##
+# But include these.
+#
+!.gitignore
+!*.wrap

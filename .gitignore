@@ -1,3 +1,6 @@
 .idea
+.vscode
+.vim
 cmake-build-debug
 build
+.cache

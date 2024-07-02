@@ -1,67 +1,58 @@
 # Welcome to Shopping Cart
 
-
-*Read this in other languages: [English](README.md), [Português do Brasil](README.pt-br.md).*
-
 This is where you can start to get familiar with the problem and what you need to run it.
 This codebase is used during pairing session for JOI initiative.
 It's focused on identifying code smells, refactoring and testing legacy codebase while promoting
 conversations.
 
-## Problem Statement
+## Problem statement
 
-We have an existing shopping cart application, with a small set of eCommerce/shopping cart rules. Rules include calculation of total price, discount and loyalty points calculation. Most of the business logic is implemented in single function shopping_cart_checkout.
+We have an existing shopping cart application, with a small set of eCommerce/shopping cart rules.
+Rules include calculation of total price, discount and loyalty points calculation.
+Most of the business logic is implemented in single function shopping_cart_checkout.
 
-## Technology used
+## Technologies used
 
-- C99
-- CMake - build tool
-- Conan - dependency management
-- CUnit - unit testing framework
+- A C compiler like GCC or Clang with support for C99.
+- [Meson](https://mesonbuild.com/).
+- [Unity Testing Framework](https://github.com/ThrowTheSwitch/Unity)
 
 ## Before the interview
 
-Get familiar with the codebase! Make sure you have the necessary dependencies installed, and that you are able to run the tests.
+Get familiar with the codebase!
+Make sure you have the necessary dependencies installed, and that you are able to run the tests.
 
-## What you need to run it
+## Initial setup
 
-- C++ Compiler
-- [Conan](https://conan.io/downloads.html)
-- [Cmake](https://cmake.org/download/)
-
-## Install Dependency
 ```console
-mkdir build
-cd build
-conan install ..
+mkdir -v ./build
+meson setup ./build
+```
+
+## Run tests
+
+```console
+meson test -C ./build
 ```
 
 ## Build
 
 ```console
-cd build
-cmake .. && cmake --build .
+meson compile -C ./build
 ```
 
-## Run Tests
+## Run the sample application
+
+To understand how this library would be used you can check the `main` method in the `src/main.c` file.
+If you want to see the results, run:
 
 ```console
-cd build
-./joi_grad_shopping_cart_c_test
+./build/joi_grad_shopping_cart_c
 ```
 
-## Run the Sample Application
+## Existing business rules
 
-To understand how this library would be used you can check the `main` method in the `src/main.c` file. If you want to see the results, run:
-
-```console
-cd build
-./joi_grad_shopping_cart_c
-```
-
-## Existing Business Rules
-
-Application code currently has following rules:
+Application code currently implements the following functionality:
 
 - Calculates total price and total loyalty points earned by the customer.
 - Products with product code starting with DIS_10 have a 10% discount applied.
