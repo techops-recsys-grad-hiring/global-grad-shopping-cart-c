@@ -31,16 +31,15 @@ Get familiar with the codebase! Make sure you have the necessary dependencies in
 
 ## Install Dependency
 ```console
-mkdir build
-cd build
-conan install ..
+conan profile detect --force
+conan install . --output-folder=build --build=missing
 ```
 
 ## Build
 
 ```console
-cd build
-cmake .. && cmake --build .
+cmake --preset conan-release
+cmake --build build
 ```
 
 ## Run Tests
